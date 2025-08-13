@@ -1,0 +1,32 @@
+---
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/ocaa/nav-bar-menu";
+import Opening from "@/components/ocaa/hero/opening";
+import AnimatedText from "@/components/shared/animated-text";
+---
+
+<GlobalLayout title="OCAA">
+    <NavBarMenu client:only />
+
+    <main
+        class="w-dvw h-[calc(100dvh_-_4rem)] flex flex-col gap-[2dvw] items-center z-10"
+    >
+        <Opening client:only />
+        <header>
+            <AnimatedText client:only>
+                <h1 class="text-[clamp(3rem,15dvw,20rem)] font-['Monoton']">
+                    OCAA
+                </h1>
+            </AnimatedText>
+        </header>
+
+        <AnimatedText client:only>
+            <h2 class="text-[clamp(1rem,2.25dvw,2.25rem)] max-w-lg">
+                Oficina de Calidad Académica y Acreditación
+            </h2>
+        </AnimatedText>
+    </main>
+</GlobalLayout>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+</style>

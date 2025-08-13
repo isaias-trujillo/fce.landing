@@ -1,0 +1,15 @@
+---
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/cesepi/nav-bar-menu";
+import Hero from "@/components/cesepi/hero";
+import Footer from "@/components/cesepi/footer.astro";
+---
+
+<GlobalLayout title="CESEPI" className="content-center items-center">
+    <NavBarMenu client:only />
+    <Hero client:only />
+    <!-- <section class="w-dvh h-dvh">
+        <span>Content</span>
+    </section> -->
+    <Footer />
+</GlobalLayout>

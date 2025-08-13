@@ -1,0 +1,291 @@
+---
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/ocaa/nav-bar-menu";
+---
+
+<GlobalLayout
+    title="OCAA"
+    className="flex flex-col items-center justify-center gap-4"
+>
+    <NavBarMenu client:only />
+    <!-- HERO -->
+    <header
+        class="relative w-full flex flex-row items-center justify-center gap-4"
+    >
+        <img
+            src="https://images.pexels.com/photos/20453594/pexels-photo-20453594.jpeg"
+            alt="Patrón andino"
+            class="max-w-md"
+        />
+
+        <div class="text-center py-16 px-4 max-w-md">
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900">
+                Trabajemos por la educación con calidad
+            </h1>
+            <p class="text-lg mt-4 text-gray-600">
+                Oficina de Calidad Académica y Acreditación – Facultad de
+                Ciencias Económicas
+            </p>
+            <div class="mt-6 flex justify-center gap-4">
+                <a
+                    href="#funciones"
+                    class="px-5 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition"
+                    >Ver funciones</a
+                >
+                <a
+                    href="#contacto"
+                    class="px-5 py-2 border border-blue-700 text-blue-700 rounded-lg hover:bg-blue-50 transition"
+                    >Contáctanos</a
+                >
+            </div>
+        </div>
+    </header>
+
+    <!-- PRESENTACIÓN -->
+    <section id="presentacion" class="max-w-4xl mx-auto px-4 py-12 text-center">
+        <p class="text-lg leading-relaxed">
+            La Oficina de Calidad Académica y Acreditación (OCAA) busca asegurar
+            la mejora continua de la formación académica en la Facultad de
+            Ciencias Económicas de la UNMSM. A través de procesos de
+            autoevaluación y planes de mejora, trabajamos para alcanzar y
+            mantener estándares de acreditación que garanticen una educación de
+            excelencia.
+        </p>
+    </section>
+
+    <!-- FUNCIONES -->
+    <section id="funciones" class="bg-white py-12 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-8">Funciones</h2>
+
+            <!-- Funciones del Jefe -->
+            <details open class="mb-4 border rounded-lg">
+                <summary class="cursor-pointer p-4 font-semibold bg-gray-100"
+                    >Funciones del Jefe</summary
+                >
+                <ul class="p-4 space-y-2 list-disc list-inside">
+                    <li>
+                        Planificar, dirigir, coordinar, supervisar y evaluar el
+                        cumplimiento de las políticas y directivas para los
+                        Sistemas de Calidad, Evaluación de la Calidad y Gestión
+                        de la Calidad en la Facultad.
+                    </li>
+                    <li>
+                        Gestionar la Calidad en la Facultad de Ciencias
+                        Económicas.
+                    </li>
+                </ul>
+            </details>
+
+            <!-- Comité Técnico de Calidad -->
+            <details class="mb-4 border rounded-lg">
+                <summary class="cursor-pointer p-4 font-semibold bg-gray-100"
+                    >Funciones del Comité Técnico de Calidad</summary
+                >
+                <ul class="p-4 space-y-2 list-disc list-inside">
+                    <li>
+                        Planificar, proponer e implementar los Sistemas de
+                        Calidad de acuerdo a las directivas de la OCCAA.
+                    </li>
+                    <li>
+                        Elaborar los manuales referentes a los Sistemas de
+                        Calidad según las directivas de la OCCAA.
+                    </li>
+                    <li>
+                        Supervisar y evaluar la implementación y desarrollo de
+                        los Sistemas de Calidad en los órganos de línea, de
+                        apoyo y otros.
+                    </li>
+                    <li>
+                        Identificar las necesidades de capacitación de los
+                        miembros en aspectos de calidad universitaria y señalar
+                        las estrategias para su ejecución en coordinación con la
+                        OCCAA.
+                    </li>
+                    <li>
+                        Identificar problemas y promover proyectos de
+                        investigación sobre Calidad Universitaria.
+                    </li>
+                    <li>
+                        Otras funciones que le asigne la Jefatura de la Oficina.
+                    </li>
+                </ul>
+            </details>
+
+            <!-- Cuerpo de Editores -->
+            <details class="mb-4 border rounded-lg">
+                <summary class="cursor-pointer p-4 font-semibold bg-gray-100"
+                    >Funciones del Cuerpo de Editores de Calidad</summary
+                >
+                <ul class="p-4 space-y-2 list-disc list-inside">
+                    <li>
+                        Ejecutar los Programas de Auditoría de la Calidad
+                        aprobados.
+                    </li>
+                    <li>
+                        Cumplir las normas de Auditoría de la Calidad y el
+                        Código de ética.
+                    </li>
+                </ul>
+            </details>
+
+            <!-- Comité Interno -->
+            <details class="border rounded-lg">
+                <summary class="cursor-pointer p-4 font-semibold bg-gray-100"
+                    >Funciones del Comité Interno</summary
+                >
+                <ul class="p-4 space-y-2 list-disc list-inside">
+                    <li>Elaborar el Proyecto de Acreditación.</li>
+                    <li>
+                        Recolectar y sistematizar la información y fuentes de
+                        verificación.
+                    </li>
+                    <li>
+                        Evaluar el cumplimiento de los estándares de calidad de
+                        la carrera.
+                    </li>
+                    <li>Procesar y registrar la información.</li>
+                    <li>
+                        Organizar talleres para el análisis y debate de los
+                        resultados de la evaluación.
+                    </li>
+                    <li>Elaborar el Informe Final.</li>
+                    <li>
+                        Organizar a la Escuela Profesional para la Evaluación
+                        Externa.
+                    </li>
+                </ul>
+            </details>
+        </div>
+    </section>
+
+    <!-- ORGANIGRAMA -->
+    <section id="organigrama" class="py-12 bg-gray-50 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4">Organigrama</h2>
+            <p class="mb-6">
+                La OCAA está a cargo de un Jefe de la Oficina y dos Jefes de las
+                áreas de Evaluación y Normalización. Depende orgánicamente del
+                Decanato de Ciencias Económicas y reporta a la OCCAA.
+            </p>
+            <img
+                src="https://economia.unmsm.edu.pe/org/arch_ocaa/ocaa-o_org.png"
+                alt="Organigrama OCAA"
+                class="mx-auto rounded-lg shadow"
+            />
+        </div>
+    </section>
+
+    <!-- COMITÉ DE CALIDAD -->
+    <section id="comite" class="py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4">Comité de Calidad</h2>
+            <p>
+                La Oficina de Calidad Académica y Acreditación (OCAA) cuenta con
+                un Comité de Calidad integrado por cuatro miembros, quienes
+                asesoran las actividades de autoevaluación y normalización de la
+                Oficina.
+            </p>
+        </div>
+    </section>
+
+    <!-- RESOLUCIONES -->
+    <section id="resoluciones" class="py-12 bg-gray-50 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-6">
+                Resoluciones del Comité
+            </h2>
+
+            <h3 class="font-semibold mt-4 mb-2">
+                Designación del Econ. Hugo Sánchez Díaz como Jefe de la OCAA
+            </h3>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>
+                    <a
+                        href="/pdfs/RESOLUCION-DECANAL-000252-2021-D-FCE.pdf"
+                        class="text-blue-700 hover:underline"
+                    >
+                        RESOLUCIÓN DECANAL-000252-2021-D-FCE [PDF]
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/pdfs/RESOLUCION-RECTORAL-013560-2021-R.pdf"
+                        class="text-blue-700 hover:underline"
+                    >
+                        RESOLUCIÓN RECTORAL-013560-2021-R [PDF]
+                    </a>
+                </li>
+            </ul>
+
+            <h3 class="font-semibold mt-6 mb-2">Comité de Calidad (2021)</h3>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>
+                    <a
+                        href="/pdfs/RESOLUCION-DECANAL-000477-2021-D-FCE.pdf"
+                        class="text-blue-700 hover:underline"
+                    >
+                        RESOLUCIÓN DECANAL-000477-2021-D-FCE [PDF]
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/pdfs/RESOLUCION-RECTORAL-014091-2021-R.pdf"
+                        class="text-blue-700 hover:underline"
+                    >
+                        RESOLUCIÓN RECTORAL-014091-2021-R [PDF]
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ACTIVIDADES -->
+    <section id="actividades" class="py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4">Actividades</h2>
+            <p class="text-gray-600">
+                🛠 Próximamente se publicará información sobre las actividades
+                de la OCAA.
+            </p>
+        </div>
+    </section>
+
+    <!-- LINKS EXTERNOS -->
+    <section id="links" class="py-12 bg-gray-50 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Links Externos</h2>
+            <div class="flex justify-center gap-4">
+                <a
+                    href="https://ocaa-link-ficticio.com"
+                    class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    >OCCAA</a
+                >
+                <a
+                    href="https://mof-link-ficticio.com"
+                    class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    >MOF</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <footer id="contacto" class="py-12 px-4 bg-white border-t">
+        <div class="max-w-4xl mx-auto text-center">
+            <img
+                src="https://economia.unmsm.edu.pe/org/arch_ocaa/hugio-17.png"
+                alt="Econ. Hugo Sánchez Díaz"
+                class="w-32 h-32 mx-auto rounded-full border-4 border-gray-200 shadow"
+            />
+            <h3 class="text-xl font-bold mt-4">Econ. Hugo Sánchez Díaz</h3>
+            <p class="text-gray-600">Jefe OCAA – FCE</p>
+            <a
+                href="mailto:ocaa.economia@unmsm.edu.pe"
+                class="text-blue-700 hover:underline mt-2 block"
+            >
+                ocaa.economia@unmsm.edu.pe
+            </a>
+        </div>
+    </footer>
+</GlobalLayout>

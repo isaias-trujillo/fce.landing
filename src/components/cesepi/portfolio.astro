@@ -1,0 +1,116 @@
+---
+import PortfolioProjectCard from "@/components/cesepi/portfolio-project-card.astro";
+
+const items = [
+    {
+        year: 2023,
+        projects: [
+            {
+                entity: "Provias Descentralizado - Ministerio de Transportes y Comunicaciones",
+                title: `Programa de Especialización en Formulación y Evaluación de
+                Proyectos de Inversión en el marco del Programa Proregión I`,
+                kind: "Especialización",
+            },
+            {
+                entity: "Facultad de Derecho y Ciencia Política - UNMSM",
+                title: `Servicio de Asistencia Técnica para la elaboración del Estudio
+                de Pre Inversión a nivel de Perfil para la Creación de la Cámara
+                de Conciliación y Arbitraje UNMSM`,
+                kind: "Servicio",
+            },
+            {
+                entity: "Facultad de Derecho y Ciencia Política - UNMSM",
+                title: `Servicio de Asistencia Técnica para la elaboración del Estudio
+                de Pre Inversión a nivel de Perfil para la Creación del Centro de
+                Estudios de Opinión Pública UNMSM`,
+                kind: "Servicio",
+            },
+        ],
+    },
+    {
+        year: 2021,
+        projects: [
+            {
+                entity: "SIDERPERU",
+                title: `Curso "Gestión de Conflictos Empresariales`,
+                kind: "Capacitación",
+            },
+        ],
+    },
+    {
+        year: 2018,
+        projects: [
+            {
+                entity: "Ministerio de la Producción",
+                title: `Curso "Business Intelligence"`,
+                kind: "Capacitación",
+            },
+            {
+                entity: "Ministerio de la Producción",
+                title: `Capacitación en Control Interno del Estado`,
+                kind: "Capacitación",
+            },
+            {
+                entity: "Ministerio de la Producción",
+                title: `Capacitación en Gestión de Riesgo`,
+                kind: "Capacitación",
+            },
+        ],
+    },
+    {
+        year: 2016,
+        projects: [
+            {
+                entity: "SIDERPERU",
+                title: `Curso "Gestión de Conflictos Empresariales"`,
+                kind: "Capacitación",
+            },
+            {
+                entity: "Ministerio de Educación",
+                title: `Programa de Formación de Especialistas en Educación en Gestión del Riesgo de desastres`,
+                kind: "Especialización",
+            },
+            {
+                entity: "PROVRAEM - Ministerio de Agricultura",
+                title: `Estudio para determinar la Oferta y Demanda de los
+                principales productos e insumos agrícolas para la producción
+                de café, cacao y piña en el Ámbito de Intervención Directa del
+                VRAEM`,
+                kind: "Estudio",
+            },
+        ],
+    },
+];
+---
+
+<section class="flex flex-col w-dvw items-center gap-8">
+    <header>
+        <h1>Conoce nuestros proyectos a través del tiempo.</h1>
+    </header>
+    <main class="flex flex-col gap-16">
+        {
+            items.map((item, index) => (
+                <section
+                    id={`section-${index}`}
+                    class="flex flex-row gap-8 items-start"
+                >
+                    <span class="text-[7.5dvw] font-['Major_Mono_Display'] leading-none align-middle">
+                        {item.year}
+                    </span>
+                    <div class="flex flex-row flex-wrap gap-4">
+                        {item.projects.map((project, index) => (
+                            <PortfolioProjectCard
+                                title={project.title}
+                                description={project.entity}
+                                kind={project.kind}
+                            />
+                        ))}
+                    </div>
+                </section>
+            ))
+        }
+    </main>
+</section>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+</style>

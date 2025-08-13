@@ -1,0 +1,30 @@
+---
+import "@/styles/global.css";
+
+type Props = Partial<{
+    title: string;
+    iconPath: string;
+    className: string;
+    style: string;
+}>;
+
+const {
+    title = "FCE - UNMSM",
+    iconPath = "/favicon.svg",
+    className = "",
+    style = "",
+} = Astro.props;
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href={iconPath} />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class={`min-h-dvh w-dvw flex flex-col ${className}`} style={style}>
+        <slot />
+    </body>
+</html>
