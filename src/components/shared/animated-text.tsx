@@ -26,7 +26,7 @@ const AnimatedText: FC<Props> = ({ children }) => {
         autoAlpha: 0,
         yoyo: true,
         stagger: {
-          amount: 0.5,
+          amount: 0.75,
           from: "random",
         },
       });

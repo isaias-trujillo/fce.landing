@@ -26,8 +26,8 @@ import logo from "@/assets/favicon.svg";
 
 const NavBarMenu = () => {
   return (
-    <NavigationMenu viewport={false} className="sticky top-0 z-10 grow-0">
-      <NavigationMenuList className="w-screen bg-background px-4 py-2 justify-between h-16">
+    <NavigationMenu viewport={false} className="sticky top-0 z-20 grow-0">
+      <NavigationMenuList className="w-screen bg-transparent px-4 py-2 justify-between h-16">
         <a href="/cesepi" className="w-6 h-6 bg-black">
           <img src={logo.src} alt="fce official logo" className="w-6 h-6 " />
         </a>

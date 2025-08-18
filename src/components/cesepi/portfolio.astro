@@ -1,5 +1,7 @@
 ---
 import PortfolioProjectCard from "@/components/cesepi/portfolio-project-card.astro";
+import AnimatedText from "../shared/animated-text";
+import Card from "@/components/cesepi/portofolio/card";
 
 const items = [
     {
@@ -10,6 +12,7 @@ const items = [
                 title: `Programa de Especialización en Formulación y Evaluación de
                 Proyectos de Inversión en el marco del Programa Proregión I`,
                 kind: "Especialización",
+                img: "https://gestion.pe/resizer/sfdpZMuBesvK_dSUE_8jVWdyig0=/1200x800/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/AIT3GXTC6VF43L5EASZ2RFRLZQ.jpg",
             },
             {
                 entity: "Facultad de Derecho y Ciencia Política - UNMSM",
@@ -17,6 +20,7 @@ const items = [
                 de Pre Inversión a nivel de Perfil para la Creación de la Cámara
                 de Conciliación y Arbitraje UNMSM`,
                 kind: "Servicio",
+                img: "https://derecho2.unmsm.edu.pe/img/content/localfdcp-06.jpg",
             },
             {
                 entity: "Facultad de Derecho y Ciencia Política - UNMSM",
@@ -24,6 +28,7 @@ const items = [
                 de Pre Inversión a nivel de Perfil para la Creación del Centro de
                 Estudios de Opinión Pública UNMSM`,
                 kind: "Servicio",
+                img: "https://derecho2.unmsm.edu.pe/img/content/localfdcp-06.jpg",
             },
         ],
     },
@@ -34,6 +39,7 @@ const items = [
                 entity: "SIDERPERU",
                 title: `Curso "Gestión de Conflictos Empresariales`,
                 kind: "Capacitación",
+                img: "https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/73319944_2477257982309857_5928444904580579328_n.png?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=BPs2RaYVWdQQ7kNvwGFlKrP&_nc_oc=Adlq5Wo_lb6avicYr5mDKRlxN4GWQbtUtT7wvirkSkz_T1ZCEdL7GORxjAb_4jOzxCM&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=otlfPwMgNQap6IP7v4Sc8w&oh=00_AfXt40tvoNYiUOTjmfohDB7eEVI_9Br7d_FzoIuF66IBjw&oe=68C45063",
             },
         ],
     },
@@ -44,16 +50,19 @@ const items = [
                 entity: "Ministerio de la Producción",
                 title: `Curso "Business Intelligence"`,
                 kind: "Capacitación",
+                img: "https://www.infobae.com/resizer/v2/H3OZC4UEDZGYXFCPEEB65YYYRA.jpeg?auth=989bbf1bcad10b44beaad5b471fcff0db8f2b4dee03239820afdb5d24d07c355&smart=true&width=992&height=558&quality=85",
             },
             {
                 entity: "Ministerio de la Producción",
                 title: `Capacitación en Control Interno del Estado`,
                 kind: "Capacitación",
+                img: "https://www.infobae.com/resizer/v2/H3OZC4UEDZGYXFCPEEB65YYYRA.jpeg?auth=989bbf1bcad10b44beaad5b471fcff0db8f2b4dee03239820afdb5d24d07c355&smart=true&width=992&height=558&quality=85",
             },
             {
                 entity: "Ministerio de la Producción",
                 title: `Capacitación en Gestión de Riesgo`,
                 kind: "Capacitación",
+                img: "https://www.infobae.com/resizer/v2/H3OZC4UEDZGYXFCPEEB65YYYRA.jpeg?auth=989bbf1bcad10b44beaad5b471fcff0db8f2b4dee03239820afdb5d24d07c355&smart=true&width=992&height=558&quality=85",
             },
         ],
     },
@@ -64,11 +73,13 @@ const items = [
                 entity: "SIDERPERU",
                 title: `Curso "Gestión de Conflictos Empresariales"`,
                 kind: "Capacitación",
+                img: "https://scontent-lim1-1.xx.fbcdn.net/v/t1.6435-9/73319944_2477257982309857_5928444904580579328_n.png?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=BPs2RaYVWdQQ7kNvwGFlKrP&_nc_oc=Adlq5Wo_lb6avicYr5mDKRlxN4GWQbtUtT7wvirkSkz_T1ZCEdL7GORxjAb_4jOzxCM&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=otlfPwMgNQap6IP7v4Sc8w&oh=00_AfXt40tvoNYiUOTjmfohDB7eEVI_9Br7d_FzoIuF66IBjw&oe=68C45063",
             },
             {
                 entity: "Ministerio de Educación",
                 title: `Programa de Formación de Especialistas en Educación en Gestión del Riesgo de desastres`,
                 kind: "Especialización",
+                img: "https://upload.wikimedia.org/wikipedia/commons/5/56/Ministerio_de_Educaci%C3%B3n%2C_Lima%2C_Peru.jpg",
             },
             {
                 entity: "PROVRAEM - Ministerio de Agricultura",
@@ -77,32 +88,65 @@ const items = [
                 de café, cacao y piña en el Ámbito de Intervención Directa del
                 VRAEM`,
                 kind: "Estudio",
+                img: "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/460395024_122093701982547027_6295449379829987551_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=atXkUDVFy5IQ7kNvwEM1dR6&_nc_oc=AdmoqY5Paya7tqn8mps0IRf769W9RUdxIWTGxJ_LA9uOP6lSYEp6_nmR-j9qOoDvWDg&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=9MAY5_nU9OlL45O_w2gTFQ&oh=00_AfVHuiCTne2BkeDcdS0T4fzrM-tFqM0de5S8cIwar16bFQ&oe=68A285EB",
             },
         ],
     },
 ];
+
+const project = items[0].projects[0];
 ---
 
-<section class="flex flex-col w-dvw items-center gap-8">
-    <header>
-        <h1>Conoce nuestros proyectos a través del tiempo.</h1>
-    </header>
-    <main class="flex flex-col gap-16">
+<section
+    class="flex flex-col flex-wrap w-dvw gap-[5dvh] items-center justify-center"
+>
+    <div
+        class="fixed top-0 h-[60rem] w-[60rem] rounded-full
+      bg-[radial-gradient(circle_farthest-side,rgba(255,87,34,0.12)_0%,rgba(255,87,34,0.06)_40%,rgba(255,255,255,0)_100%)]"
+    >
+    </div>
+
+    <AnimatedText client:only>
+        <header
+            class="relative flex max-w-2xl flex-col items-center mt-[10dvh] gap-8"
+        >
+            <h1
+                class="text-center text-3xl font-medium dark:text-gray-50 sm:text-6xl"
+            >
+                Proyectos que generan <strong class="text-orange-700"
+                    >impacto</strong
+                >
+            </h1>
+            <h2 class="text-center text-lg leading-6">
+                Servicios y programas diseñados junto a organizaciones que
+                apuestan por la innovación y el crecimiento.
+            </h2>
+        </header>
+    </AnimatedText>
+    <Card
+        client:only
+        title={project.title}
+        description={project.entity}
+        kind={project.kind}
+        img={project.img}
+    />
+    <main class="flex flex-col flex-wrap gap-[5dvw] items-center">
         {
             items.map((item, index) => (
                 <section
                     id={`section-${index}`}
-                    class="flex flex-row gap-8 items-start"
+                    class="flex flex-row flex-wrap gap-8 justify-center"
                 >
                     <span class="text-[7.5dvw] font-['Major_Mono_Display'] leading-none align-middle">
                         {item.year}
                     </span>
-                    <div class="flex flex-row flex-wrap gap-4">
+                    <div class="flex flex-row flex-wrap gap-8 w-full items-center justify-center">
                         {item.projects.map((project, index) => (
                             <PortfolioProjectCard
                                 title={project.title}
                                 description={project.entity}
                                 kind={project.kind}
+                                img={project.img}
                             />
                         ))}
                     </div>
