@@ -1,0 +1,107 @@
+---
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/cesepi/nav-bar-menu";
+import AnimatedText from "@/components/shared/animated-text";
+import Gallery from "@/components/cesepi/team/gallery";
+import GalleryItem from "@/components/cesepi/team/gallery.item";
+
+const consultants = [
+    {
+        imgSrc: "https://images.pexels.com/photos/32758452/pexels-photo-32758452.jpeg",
+        fullName: "Juan Pérez Ramírez",
+        title: "Consultor en Regulación Económica",
+        category: "internal",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/14170186/pexels-photo-14170186.jpeg",
+        fullName: "María López Fernández",
+        title: "Especialista en Políticas Públicas",
+        category: "external",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/30120605/pexels-photo-30120605.jpeg",
+        fullName: "Carlos Gutiérrez Sánchez",
+        title: "Asesor en Finanzas Corporativas",
+        category: "internal",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/7588113/pexels-photo-7588113.jpeg",
+        fullName: "Sofía Vargas Torres",
+        title: "Consultora en Comercio Internacional",
+        category: "external",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/26733183/pexels-photo-26733183.jpeg",
+        fullName: "Luis Castro Mendoza",
+        title: "Analista de Desarrollo Económico",
+        category: "internal",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/6731622/pexels-photo-6731622.jpeg",
+        fullName: "Elena Ríos Salazar",
+        title: "Consultora en Innovación y Competitividad",
+        category: "external",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/4845838/pexels-photo-4845838.jpeg",
+        fullName: "Ricardo Fernández Huamán",
+        title: "Especialista en Economía Laboral",
+        category: "internal",
+    },
+    {
+        imgSrc: "https://images.pexels.com/photos/7120982/pexels-photo-7120982.jpeg",
+        fullName: "Daniela Ortiz Villanueva",
+        title: "Consultora en Economía Ambiental",
+        category: "external",
+    },
+];
+---
+
+<GlobalLayout title="CESEPI" className="content-center items-center">
+    <NavBarMenu client:only />
+
+    <section
+        class="flex flex-col flex-wrap w-dvw gap-[5dvh] items-center justify-center"
+    >
+        <div
+            class="absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+        >
+            <div
+                class="absolute left-0 right-0 top-0 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"
+            >
+            </div>
+        </div>
+        <AnimatedText client:only>
+            <header
+                class="relative flex max-w-2xl flex-col items-center mt-[10dvh] gap-8"
+            >
+                <h1
+                    class="text-center text-3xl font-medium dark:text-gray-50 sm:text-6xl"
+                >
+                    Nuestro equipo de <strong class="text-violet-700"
+                        >consultores</strong
+                    >
+                </h1>
+                <h2 class="text-center text-lg leading-6">
+                    El CESEPI reúne a profesionales de la UNMSM y consultores
+                    externos que aportan conocimiento especializado y
+                    experiencia práctica para el desarrollo de proyectos de alto
+                    impacto
+                </h2>
+            </header>
+        </AnimatedText>
+        <Gallery client:only>
+            {
+                consultants.map((c) => (
+                    <GalleryItem
+                        client:only
+                        category={c.category}
+                        fullName={c.fullName}
+                        imgSrc={c.imgSrc}
+                        title={c.title}
+                    />
+                ))
+            }
+        </Gallery>
+    </section>
+</GlobalLayout>

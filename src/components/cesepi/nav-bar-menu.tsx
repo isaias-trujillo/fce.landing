@@ -121,25 +121,20 @@ const NavBarMenu = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="flex flex-row items-center gap-2">
-              <Users className="size-4" />
-              Equipo
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[300px] gap-4">
-                <li>
-                  <NavigationMenuLink asChild>
-                    <a href="/cesepi/consultores/unmsm">Consultores UNMSM</a>
-                  </NavigationMenuLink>
-                  <NavigationMenuLink asChild>
-                    <a href="/cesepi/consultores/externos">
-                      Consultores externos
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-              </ul>
-            </NavigationMenuContent>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <a
+                href="/cesepi/equipo"
+                className="flex flex-row items-center gap-2"
+              >
+                <Users className="size-4" />
+                Equipo
+              </a>
+            </NavigationMenuLink>
           </NavigationMenuItem>
+
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild

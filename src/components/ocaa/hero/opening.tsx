@@ -27,7 +27,7 @@ const Opening = () => {
 
   return (
     <video
-      className=" max-h-2/5 object-cover"
+      className=" max-w-1/5 object-cover"
       ref={videoRef}
       loop
       muted

@@ -35,7 +35,7 @@ const AnimatedText: FC<Props> = ({ children }) => {
   );
 
   return (
-    <header ref={headerRef} className={`max-w-fit text-balance z-10`}>
+    <header ref={headerRef} className={`min-w-fit text-balance z-10`}>
       {children}
     </header>
   );
