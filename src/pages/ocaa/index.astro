@@ -6,34 +6,117 @@ import AnimatedText from "@/components/shared/animated-text";
 import AnimatedTitle from "@/components/ocaa/hero/animated-title";
 ---
 
-<GlobalLayout title="OCAA">
+<GlobalLayout
+    title="OCAA"
+    className="items-start justify-start [&>*]:px-[2dvw] [&>*]:py-[4dvh]"
+>
     <NavBarMenu client:only />
-    <video
-        class="w-dvw h-dvh fixed object-cover -z-10"
-        loop
-        muted
-        autoplay
-        src="https://videos.pexels.com/video-files/3064242/3064242-hd_1920_1080_24fps.mp4"
-    ></video>
 
     <main
-        class="w-dvw h-[calc(100dvh_-_4rem)] flex flex-row gap-[2dvw] items-center justify-center"
+        class="w-dvw gap-[2dvw] py-[4dvh] pl-[4dvh] justify-center max-w-6xl:justify-start items-center text-white flex flex-row flex-wrap relative"
     >
-        <header class="text-white flex flex-col items-center">
-            <AnimatedText client:only>
-                <h1
-                    class="text-[clamp(3rem,10dvw,5dvw+10rem)] font-['Monoton']"
-                >
-                    OCAA
-                </h1>
-            </AnimatedText>
-            <AnimatedText client:only>
-                <h2 class="text-[clamp(1rem,2.25dvw,4.25rem)] font-bold">
-                    Oficina de Calidad Académica y Acreditación
-                </h2>
-            </AnimatedText>
-        </header>
+        <div class="absolute inset-0 overflow-hidden">
+            <video
+                class="w-dvw h-full object-cover"
+                loop
+                muted
+                autoplay
+                src="https://videos.pexels.com/video-files/3064242/3064242-hd_1920_1080_24fps.mp4"
+            ></video>
+            <div class="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+        </div>
+
+        <AnimatedText client:only>
+            <h1 class="text-[clamp(2rem,5dvw,2dvw_+_10rem)] font-['Monoton']">
+                OCAA
+            </h1>
+        </AnimatedText>
+        <AnimatedText client:only>
+            <h2
+                class="text-[clamp(1rem,2vw,2dvw_+_1.25rem)] font-bold max-w-2xl"
+            >
+                Oficina de Calidad Académica y Acreditación
+            </h2>
+        </AnimatedText>
     </main>
+
+    <section
+        class="flex flex-row flex-wrap items-center justify-between gap-[6dvw]"
+    >
+        <article>
+            <h1 class="text-8xl border-b-2 border-black">01</h1>
+            <h2 class="text-2xl">Presentación</h2>
+        </article>
+
+        <p class="text-gray-600 text-balance max-w-sm min-w-xs">
+            <span>
+                La <strong
+                    >Oficina de Calidad Académica y Acreditación (OCAA)</strong
+                > de la Facultad de Ciencias Económicas se creó con un objetivo claro:
+                <strong>elevar el nivel académico de nuestra institución</strong
+                >. Trabajamos de manera coordinada con docentes, estudiantes y
+                personal administrativo para asegurar que cumplamos con los
+                objetivos de la Facultad.
+            </span>
+            <br />
+            <br />
+            <span
+                >Actualmente, estamos enfocados en un proceso de autoevaluación.
+                Con base en sus resultados, diseñaremos e implementaremos un <strong
+                    >Plan de Mejora</strong
+                > que nos guiará hacia la acreditación, un reconocimiento que certifica
+                la excelencia de nuestra calidad educativa.</span
+            >
+        </p>
+        <article
+            class="flex flex-col flex-wrap gap-2 h-min place-items-center max-w-3xs"
+        >
+            <img
+                class="grayscale-100"
+                src="/cdn/ocaa/jefe.webp"
+                alt="Econ. Hugo Sánchez Díaz"
+            />
+            <p class="flex flex-col w-max gap-2">
+                <h3 class="text-xl font-bold">Econ. Hugo Sánchez Díaz</h3>
+                <span class="text-gray-600">Jefe OCAA – FCE</span>
+                <a
+                    href="mailto:ocaa.economia@unmsm.edu.pe"
+                    class="text-red-900 hover:underline font-semibold"
+                >
+                    ocaa.economia@unmsm.edu.pe
+                </a>
+            </p>
+        </article>
+    </section>
+
+    <section
+        class="flex flex-row flex-wrap items-center justify-between gap-[6dvw]"
+    >
+        <article>
+            <h1 class="text-8xl border-b-2 border-black border-">02</h1>
+            <h2 class="text-2xl">Objectivos ~</h2>
+        </article>
+        <ul
+            class="text-gray-600 text-balance max-w-sm min-w-xs list-disc flex flex-row flex-wrap gap-[2dvh]"
+        >
+            <li>
+                <strong>Planificar</strong> y <strong>ejecutar</strong> el proceso
+                de <strong>autoevaluación</strong>
+                en la Facultad para lograr la <strong>Acreditación</strong>.
+            </li>
+            <li>
+                <strong>Asesorar</strong> las actividades de <strong
+                    >evaluación</strong
+                > de los Sistemas de <strong class="text-red-900"
+                    >Calidad Académica</strong
+                > en todas las dependencias de la Facultad de Ciencias Económicas.
+            </li>
+        </ul>
+        <img
+            class="grayscale-100 max-w-3xs opacity-0"
+            src="https://images.pexels.com/photos/20702125/pexels-photo-20702125.jpeg"
+        />
+    </section>
 </GlobalLayout>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
