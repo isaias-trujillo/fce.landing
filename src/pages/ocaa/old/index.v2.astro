@@ -1,0 +1,143 @@
+---
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import AnimatedText from "@/components/shared/animated-text";
+import AnimatedTitle from "@/components/ocaa/hero/animated-title";
+---
+
+<GlobalLayout title="OCAA">
+    <main
+        class="w-dvw grow gap-[2dvw] py-[4dvh] pl-[4dvh] justify-center max-w-6xl:justify-start items-center text-white flex flex-row flex-wrap relative"
+    >
+        <div class="absolute inset-0 overflow-hidden">
+            <video
+                class="w-dvw h-full object-cover"
+                loop
+                muted
+                autoplay
+                src="https://videos.pexels.com/video-files/3064242/3064242-hd_1920_1080_24fps.mp4"
+            ></video>
+            <div class="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+        </div>
+
+        <AnimatedText client:only>
+            <h1 class="text-[clamp(2rem,8dvw,2dvw_+_10rem)] font-['Monoton']">
+                OCAA
+            </h1>
+        </AnimatedText>
+        <AnimatedText client:only>
+            <h2
+                class="text-[clamp(1rem,2.5vw,2dvw_+_1.25rem)] font-bold max-w-2xl"
+            >
+                Oficina de Calidad Académica y Acreditación
+            </h2>
+        </AnimatedText>
+    </main>
+
+    <section
+        class="grid grid-flow-dense gap-x-[4dvw] gap-y-[2dvh] p-[2dvh] justify-start"
+        style="grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr))"
+    >
+        <aside class="flex flex-col flex-wrap gap-4 place-items-center">
+            <img
+                class="grayscale max-w-44"
+                src="/cdn/ocaa/jefe.webp"
+                alt="Econ. Hugo Sánchez Díaz"
+            />
+            <p class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold">Econ. Hugo Sánchez Díaz</h3>
+                <span class="text-gray-600">Jefe OCAA – FCE</span>
+                <a
+                    href="mailto:ocaa.economia@unmsm.edu.pe"
+                    class="text-red-900 hover:underline font-semibold"
+                >
+                    ocaa.economia@unmsm.edu.pe
+                </a>
+            </p>
+        </aside>
+        <article class="flex flex-col flex-wrap max-w-fit">
+            <header>
+                <h1
+                    class="text-5xl lg:text-6xl xl:text-7xl font-bold border-b-2 border-foreground pb-2"
+                >
+                    01
+                </h1>
+                <h2 class="text-2xl mt-2">Presentación</h2>
+            </header>
+            <p class="text-gray-600 text-balance max-w-sm min-w-xs">
+                La <strong>OCAA</strong> impulsa la mejora continua en la Facultad
+                de Ciencias Económicas, trabajando junto a toda la comunidad académica.
+                Nuestro objetivo: consolidar la <strong
+                    >excelencia educativa</strong
+                >
+                a través de la autoevaluación y la implementación de un
+                <strong>Plan de Mejora</strong> que nos conduzca a la acreditación.
+            </p>
+        </article>
+        <article class="flex flex-col flex-wrap max-w-fit">
+            <header>
+                <h1
+                    class="text-5xl lg:text-6xl xl:text-7xl font-bold border-b-2 border-black pb-2"
+                >
+                    02
+                </h1>
+                <h2 class="text-2xl mt-2">Objetivos</h2>
+            </header>
+
+            <ul
+                class="text-gray-600 text-balance list-disc flex flex-col gap-4 max-w-sm min-w-xs"
+            >
+                <li>
+                    <strong>Planificar</strong> y <strong>ejecutar</strong> el proceso
+                    de <strong>autoevaluación</strong> en la Facultad para lograr
+                    la
+                    <strong>Acreditación</strong>.
+                </li>
+                <li>
+                    <strong>Asesorar</strong> las actividades de <strong
+                        >evaluación</strong
+                    >
+                    de los Sistemas de <strong class="text-red-900"
+                        >Calidad Académica</strong
+                    >
+                    en todas las dependencias de la Facultad de Ciencias Económicas.
+                </li>
+            </ul>
+        </article>
+        <article class="flex flex-col flex-wrap max-w-fit">
+            <header>
+                <h1
+                    class="text-5xl lg:text-6xl xl:text-7xl font-bold border-b-2 border-black pb-2"
+                >
+                    03
+                </h1>
+                <h2 class="text-2xl mt-2">Misión</h2>
+            </header>
+            <p class="text-gray-600 text-balance max-w-sm min-w-xs">
+                Impulsar la mejora continua de los procesos académicos y
+                administrativos, promoviendo una cultura de calidad que asegure
+                formación profesional de excelencia, en beneficio de los
+                estudiantes, docentes y la sociedad.
+            </p>
+        </article>
+        <article class="flex flex-col flex-wrap max-w-fit">
+            <header>
+                <h1
+                    class="text-5xl lg:text-6xl xl:text-7xl font-bold border-b-2 border-black pb-2"
+                >
+                    04
+                </h1>
+                <h2 class="text-2xl mt-2">Visión</h2>
+            </header>
+            <p class="text-gray-600 text-balance max-w-sm min-w-xs">
+                Ser reconocida como una oficina líder en gestión de la calidad
+                académica universitaria, contribuyendo al logro de la
+                acreditación nacional e internacional de la Facultad y
+                consolidando su posición como referente en la educación superior
+                en ciencias económicas.
+            </p>
+        </article>
+    </section>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+    </style>
+</GlobalLayout>
