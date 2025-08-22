@@ -5,13 +5,9 @@ import AnimatedText from "@/components/shared/animated-text";
 
 <GlobalLayout
     title="OCAA"
-    className="w-dvw min-h-dvh px-2 flex place-content-center place-items-center p-4 dark bg-background text-foreground"
+    className="grid gap-[2dvw] auto-rows-[minmax(10rem,auto)] grid-flow-dense max-w-dvw min-h-dvh dark bg-background text-foreground"
+    style="grid-template-columns: repeat(auto-fit, minmax(min(15rem, fit-content), 1fr))"
 >
-    <main
-        class="grid gap-[2dvw] lg:w-[75%] w-full
-               auto-rows-[minmax(10rem,auto)] grid-flow-dense"
-        style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
-    >
         <article
             class="row-span-1 bg-gray-800 p-4 rounded-lg flex flex-col flex-wrap place-content-center"
         >
@@ -45,7 +41,7 @@ import AnimatedText from "@/components/shared/animated-text";
                 <h2
                     class="text-[clamp(1rem,2vw,2dvw_+_1.25rem)] font-bold max-w-2xl text-stone-400"
                 >
-                    Oficina de Calidad Académica y Acreditación
+                    Officina de Calidad Académica y Acreditación
                 </h2>
             </AnimatedText>
         </div>
@@ -61,5 +57,4 @@ import AnimatedText from "@/components/shared/animated-text";
         >
             9
         </div>
-    </main>
 </GlobalLayout>
