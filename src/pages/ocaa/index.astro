@@ -16,32 +16,32 @@ import { Facebook, Mail, MapPin } from "lucide-react";
         <BackBlock />
         <Block id="presentation">
             <span class="material-symbols-outlined"> waving_hand </span>
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Presentación</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Presentación</h1>
         </Block>
         <Block
             id="activities"
             class="bg-yellow-300 text-background max-xl:flex-col max-lg:flex-row max-md:flex-col"
         >
             <span class="material-symbols-outlined"> newspaper </span>
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Actividades</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Actividades</h1>
         </Block>
         <Block id="functions">
             <span class="material-symbols-outlined"> category </span>
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Funciones</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Funciones</h1>
         </Block>
         <Block id="organization" class="flex-col">
             <span class="material-symbols-outlined"> graph_2 </span>
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Organigrama</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Organigrama</h1>
         </Block>
         <OcaaBlock />
         <Block id="transparency" class="flex-col">
             <span class="material-symbols-outlined"> files </span>
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Transparencia</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Transparencia</h1>
         </Block>
         <Block id="contact-us" class="flex-col items-start text-left px-4">
-            <h1 class="text-[clamp(1rem,2.5dvw,1.5rem)]">Contáctanos</h1>
+            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Contáctanos</h1>
             <ul
-                class="w-full flex flex-rows flex-wrap gap-x-8 gap-y-2 justify-between items-start"
+                class="w-full flex flex-rows flex-wrap gap-x-8 gap-y-4 justify-between items-start"
             >
                 <li>
                     <a
@@ -52,7 +52,7 @@ import { Facebook, Mail, MapPin } from "lucide-react";
                         <Mail
                             className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
                         />
-                        <span class="text-[clamp(0.75rem,2dvw,1rem)]"
+                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
                             >ocaa.economia@unmsm.edu.pe</span
                         >
                     </a>
@@ -66,7 +66,7 @@ import { Facebook, Mail, MapPin } from "lucide-react";
                         <Facebook
                             className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
                         />
-                        <span class="text-[clamp(0.75rem,2dvw,1rem)]"
+                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
                             >OCAA ~ FCE</span
                         >
                     </a>
@@ -80,13 +80,26 @@ import { Facebook, Mail, MapPin } from "lucide-react";
                         <MapPin
                             className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
                         />
-                        <span class="text-[clamp(0.75rem,2dvw,1rem)]"
+                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
                             >Calle Germán Amézaga N° 375 Ciudad Universitaria,
                             Lima 1.</span
                         >
                     </a>
                 </li>
             </ul>
+        </Block>
+        <Block id="map" class="flex-col p-[0_!important]">
+            <iframe
+                class="w-full h-full rounded-sm"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d243.86194647889337!2d-77.08077584293679!3d-12.057886485436867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDAzJzI4LjQiUyA3N8KwMDQnNTAuNyJX!5e0!3m2!1ses!2spe!4v1752679219284!5m2!1ses!2spe"
+                style="border: 0px; --darkreader-inline-border-top: currentcolor; --darkreader-inline-border-right: currentcolor; --darkreader-inline-border-bottom: currentcolor; --darkreader-inline-border-left: currentcolor;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                data-darkreader-inline-border-top=""
+                data-darkreader-inline-border-right=""
+                data-darkreader-inline-border-bottom=""
+                data-darkreader-inline-border-left=""></iframe>
         </Block>
     </main>
 </GlobalLayout>
@@ -98,13 +111,13 @@ import { Facebook, Mail, MapPin } from "lucide-react";
         gap: clamp(0.5rem, 2dvh, 1.5rem);
         padding: 1rem;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(17.5dvh, auto);
+        grid-auto-rows: minmax(16dvh, auto);
         grid-template-areas:
             "back                   presentation    functions   organization"
             "activities             ocaa            ocaa        ocaa"
             "activities             ocaa            ocaa        ocaa"
             "transparency           ocaa            ocaa        ocaa"
-            "transparency           contact-us  contact-us      contact-us";
+            "transparency           contact-us  contact-us      map";
     }
 
     /* asignación de áreas */
@@ -146,9 +159,9 @@ import { Facebook, Mail, MapPin } from "lucide-react";
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
                 "back                   ocaa                ocaa"
-                "presentation           activities          activities"
-                "transparency           functions           organization"
-                "transparency           contact-us          contact-us";
+                "activities             activities          presentation"
+                "functions              organization        transparency"
+                "contact-us             contact-us          map";
         }
     }
 
@@ -158,11 +171,10 @@ import { Facebook, Mail, MapPin } from "lucide-react";
             grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
                 "back                   ocaa"
-                "presentation           ocaa"
-                "functions              activities"
-                "organization           activities"
-                "transparency           transparency"
-                "contact-us             contact-us";
+                "presentation           activities"
+                "functions              organization"
+                "transparency            contact-us"
+                "map            contact-us";
         }
     }
 
