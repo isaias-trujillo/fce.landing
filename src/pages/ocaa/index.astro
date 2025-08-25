@@ -1,80 +1,84 @@
 ---
 import GlobalLayout from "@/layouts/GlobalLayout.astro";
 import AnimatedText from "@/components/shared/animated-text";
+import Block from "@/components/ocaa/hero/block.astro";
+import BackBlock from "@/components/ocaa/hero/back-block.astro";
+import OcaaBlock from "@/components/ocaa/hero/ocaa-block.astro";
+import MofBlock from "@/components/ocaa/hero/mof-block.astro";
+import { Facebook } from "lucide-react";
 ---
 
 <GlobalLayout
     title="OCAA"
     class="flex place-items-center place-content-center dark text-foreground bg-background"
 >
-    <main class="ocaa-grid text-foreground 2xl:w-[clamp(75dvw,100%,120rem)]">
-        <section class="back">
-            <a href="https://economia.unmsm.edu.pe" class="text-2xl"
-                >Volver a la Facultad</a
-            >
-        </section>
-
-        <section class="presentation">
-            <span>01</span>
+    <main class="ocaa-grid 2xl:w-[clamp(75dvw,100%,120rem)]">
+        <BackBlock />
+        <Block id="presentation">
+            <span class="material-symbols-outlined text-orange-300">
+                waving_hand
+            </span>
             <h1 class="text-2xl">Presentación</h1>
-        </section>
-        <section class="objectives">
-            <span>02</span>
+        </Block>
+        <Block id="objectives">
+            <span class="material-symbols-outlined text-orange-300">
+                target
+            </span>
             <h1 class="text-2xl">Objetivos</h1>
-        </section>
-
-        <section class="functions">
-            <span>03</span>
+        </Block>
+        <Block id="functions">
+            <span class="material-symbols-outlined text-orange-300">
+                category
+            </span>
             <h1 class="text-2xl">Funciones</h1>
-        </section>
-
-        <section class="organigram">
-            <span>04</span>
+        </Block>
+        <Block id="organigram" class="flex-col">
+            <span class="material-symbols-outlined text-orange-300">
+                graph_2
+            </span>
             <h1 class="text-2xl">Organigrama</h1>
-        </section>
-
-        <section class="ocaa relative overflow-hidden flex place-items-center">
-            <!-- 🎥 Video como fondo -->
-            <video
-                src="https://videos.pexels.com/video-files/5599700/5599700-uhd_2560_1440_30fps.mp4"
-                autoplay
-                muted
-                loop
-                playsinline
-                class="absolute object-cover w-full h-full"></video>
-
-            <!-- <AnimatedText client:only> -->
-            <h1
-                class="text-[clamp(2rem,15dvw,15rem)] font-black text-white mix-blend-difference"
-            >
-                OCAA
-            </h1>
-            <!-- </AnimatedText> -->
-        </section>
-        <section class="quality-committee">
-            <span>05</span>
+        </Block>
+        <OcaaBlock />
+        <Block id="quality-committee" class="flex-col">
+            <span class="material-symbols-outlined text-orange-300">
+                groups
+            </span>
             <h1 class="text-2xl">Comité de Calidad</h1>
-        </section>
-        <section class="committee-resolutions">
-            <span>06</span>
+        </Block>
+        <Block id="committee-resolutions" class="flex-col">
+            <span class="material-symbols-outlined text-orange-300">
+                files
+            </span>
             <h1 class="text-2xl">Resoluciones del Comité</h1>
-        </section>
-        <section class="mof">
-            <span>07</span>
-            <h1 class="text-2xl">MOF</h1>
-        </section>
-        <section class="contact-us gap-4 lg:col-span-2">
-            <span>08</span>
-            <h1 class="text-2xl">Contáctanos</h1>
-            <ul class="flex flex-row flex-wrap gap-x-8 gap-y-2 justify-between">
+        </Block>
+        <MofBlock />
+        <Block id="contact-us" class="flex-col items-start text-left">
+            <h1 class="text-2xl text-orange-300">Contáctanos</h1>
+            <ul
+                class="w-full flex flex-rows flex-wrap gap-x-8 gap-y-2 justify-between items-start"
+            >
                 <li>
                     <a
                         class="place-content-center place-items-center flex gap-2"
                         href="mailto:ocaa.economia@unmsm.edu.pe"
                         target="_blank"
                     >
-                        <span class="material-symbols-outlined"> mail </span>
+                        <span
+                            class="material-symbols-outlined color-orange-300"
+                        >
+                            mail
+                        </span>
                         <span>ocaa.economia@unmsm.edu.pe</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="place-content-center place-items-center flex gap-2"
+                        href="https://maps.google.com/maps/dir//-12.0578889,-77.08075/@-12.0578889,-77.08075,20z"
+                        target="_blank"
+                    >
+                        <Facebook />
+                        <span>OCAA ~ FCE</span>
                     </a>
                 </li>
                 <li>
@@ -84,13 +88,16 @@ import AnimatedText from "@/components/shared/animated-text";
                         target="_blank"
                     >
                         <span class="material-symbols-outlined">
-                            captive_portal
+                            location_on
                         </span>
-                        <span>OCAA UNMSM</span>
+                        <span
+                            >Calle Germán Amézaga N° 375 Ciudad Universitaria,
+                            Lima 1.</span
+                        >
                     </a>
                 </li>
             </ul>
-        </section>
+        </Block>
     </main>
 </GlobalLayout>
 
@@ -101,23 +108,13 @@ import AnimatedText from "@/components/shared/animated-text";
         gap: 1rem;
         padding: 1rem;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(18dvh, auto);
+        grid-auto-rows: minmax(17.5dvh, auto);
         grid-template-areas:
-            "back                   presentation    functions   organigram"
-            "objectives             ocaa            ocaa        ocaa"
-            "objectives             ocaa            ocaa        ocaa"
+            "back                   presentation    objectives  functions"
+            "organigram             ocaa            ocaa        ocaa"
             "quality-committee      ocaa            ocaa        ocaa"
-            "committee-resolutions  mof      contact-us  contact-us";
-    }
-
-    /* estilos base de los bloques */
-    .ocaa-grid > * {
-        background: var(--color-accent-foreground);
-        border-radius: 0.5rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+            "committee-resolutions  ocaa            ocaa        ocaa"
+            "mof                    contact-us  contact-us      contact-us";
     }
 
     /* asignación de áreas */
@@ -139,47 +136,64 @@ import AnimatedText from "@/components/shared/animated-text";
     .ocaa {
         grid-area: ocaa;
     }
-    .six {
-        grid-area: six;
+    .quality-committee {
+        grid-area: quality-committee;
     }
-    .seven {
-        grid-area: seven;
+    .committee-resolutions {
+        grid-area: committee-resolutions;
     }
-    .eight {
-        grid-area: eight;
+    .mof {
+        grid-area: mof;
     }
-    .nine {
-        grid-area: nine;
+    .contact-us {
+        grid-area: contact-us;
     }
 
-    /* Tablet */
-    @media (max-width: 1024px) {
+    .title {
+        grid-area: title;
+    }
+
+    /* lg */
+    @media (max-width: 64rem) {
         .ocaa-grid {
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
-                "back ocaa ocaa"
-                "presentation functions organigram"
-                " objectives seven six"
-                "eight nine nine";
+                "back                   ocaa                ocaa"
+                "presentation           objectives          functions"
+                "organigram             quality-committee   committee-resolutions"
+                "mof                    contact-us          contact-us";
         }
     }
 
-    /* Móvil */
-    @media (max-width: 640px) {
+    /* sm */
+    @media (max-width: 40rem) {
         .ocaa-grid {
-            width: 100dvw;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "back                   ocaa"
+                "presentation           objectives"
+                "functions              objectives"
+                "organigram             quality-committee"
+                "committee-resolutions  mof"
+                "contact-us             contact-us";
+        }
+    }
+
+    /* xs */
+    @media (max-width: 28rem) {
+        .ocaa-grid {
             grid-template-columns: 1fr;
             grid-template-areas:
                 "back"
                 "ocaa"
                 "presentation"
                 "functions"
-                "organigram"
                 "objectives"
-                "seven"
-                "six"
-                "eight"
-                "nine";
+                "organigram"
+                "quality-committee"
+                "committee-resolutions"
+                "mof"
+                "contact-us";
         }
     }
 </style>

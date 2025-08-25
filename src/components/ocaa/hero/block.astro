@@ -1,0 +1,14 @@
+---
+interface Props {
+    id: string;
+    class?: string;
+}
+
+const props = Astro.props;
+---
+
+<section
+    class={`${props.id} flex flex-wrap gap-x-[2dvh] gap-y-[1dvh] text-center text-wrap break-words items-center justify-center px-[2dvw] border-2 rounded-md ${props.class} `}
+>
+    <slot />
+</section>
