@@ -8,6 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   integrations: [react()],
   site: "https://isaias-trujillo.github.io",
+  base: "/fce.landing",
   vite: {
     plugins: [tailwindcss()],
   },
