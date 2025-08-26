@@ -1,7 +1,6 @@
 ---
 import PortfolioProjectCard from "@/components/cesepi/portfolio-project-card.astro";
 import AnimatedText from "../shared/animated-text";
-import Card from "@/components/cesepi/portofolio/card";
 
 const items = [
     {
@@ -93,8 +92,6 @@ const items = [
         ],
     },
 ];
-
-const project = items[0].projects[0];
 ---
 
 <section
@@ -131,7 +128,7 @@ const project = items[0].projects[0];
             items.map((item, index) => (
                 <section
                     id={`section-${index}`}
-                    class="flex flex-row flex-wrap gap-8 lg:justify-center"
+                    class="flex flex-row flex-wrap gap-8 justify-center"
                 >
                     <span class="text-[7.5dvw] font-['Major_Mono_Display'] leading-none align-middle">
                         {item.year}
