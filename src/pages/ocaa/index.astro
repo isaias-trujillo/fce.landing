@@ -1,27 +1,24 @@
 ---
 import GlobalLayout from "@/layouts/GlobalLayout.astro";
-import AnimatedText from "@/components/shared/animated-text";
 import Block from "@/components/ocaa/hero/block.astro";
 import BackBlock from "@/components/ocaa/hero/back-block.astro";
 import OcaaBlock from "@/components/ocaa/hero/ocaa-block.astro";
-import MofBlock from "@/components/ocaa/hero/mof-block.astro";
 import { Facebook, Mail, MapPin } from "lucide-react";
+import BossBlock from "@/components/ocaa/hero/boss-block.astro";
+import ContactUsBlock from "@/components/ocaa/hero/contact-us-block.astro";
 ---
 
 <GlobalLayout
     title="OCAA"
     class="flex place-items-center place-content-center dark text-foreground bg-background"
 >
-    <main class="ocaa-grid 2xl:w-[clamp(75dvw,100%,120rem)]">
+    <main class="ocaa-grid w-[clamp(75vw,100%,90rem)] shrink-0">
         <BackBlock />
         <Block id="presentation">
             <span class="material-symbols-outlined"> waving_hand </span>
             <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Presentación</h1>
         </Block>
-        <Block
-            id="activities"
-            class="bg-yellow-300 text-background max-xl:flex-col max-lg:flex-row max-md:flex-col"
-        >
+        <Block id="activities" class="">
             <span class="material-symbols-outlined"> newspaper </span>
             <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Actividades</h1>
         </Block>
@@ -29,66 +26,18 @@ import { Facebook, Mail, MapPin } from "lucide-react";
             <span class="material-symbols-outlined"> category </span>
             <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Funciones</h1>
         </Block>
-        <Block id="organization" class="flex-col">
+        <Block id="organization">
             <span class="material-symbols-outlined"> graph_2 </span>
             <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Organigrama</h1>
         </Block>
         <OcaaBlock />
-        <Block id="transparency" class="flex-col">
+        <Block id="transparency">
             <span class="material-symbols-outlined"> files </span>
             <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Transparencia</h1>
         </Block>
-        <Block id="contact-us" class="flex-col items-start text-left px-4">
-            <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Contáctanos</h1>
-            <ul
-                class="w-full flex flex-rows flex-wrap gap-x-8 gap-y-4 justify-between items-start"
-            >
-                <li>
-                    <a
-                        class="place-content-center place-items-center flex gap-2"
-                        href="mailto:ocaa.economia@unmsm.edu.pe"
-                        target="_blank"
-                    >
-                        <Mail
-                            className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
-                        />
-                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
-                            >ocaa.economia@unmsm.edu.pe</span
-                        >
-                    </a>
-                </li>
-                <li>
-                    <a
-                        class="place-content-center place-items-center flex gap-2"
-                        href="https://maps.google.com/maps/dir//-12.0578889,-77.08075/@-12.0578889,-77.08075,20z"
-                        target="_blank"
-                    >
-                        <Facebook
-                            className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
-                        />
-                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
-                            >OCAA ~ FCE</span
-                        >
-                    </a>
-                </li>
-                <li>
-                    <a
-                        class="place-content-center place-items-center flex gap-2"
-                        href="https://admision.unmsm.edu.pe/portal/"
-                        target="_blank"
-                    >
-                        <MapPin
-                            className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
-                        />
-                        <span class="text-[clamp(0.75rem,1.25dvw,1rem)]"
-                            >Calle Germán Amézaga N° 375 Ciudad Universitaria,
-                            Lima 1.</span
-                        >
-                    </a>
-                </li>
-            </ul>
-        </Block>
-        <Block id="map" class="flex-col p-[0_!important]">
+        <BossBlock />
+        <ContactUsBlock />
+        <Block id="map" class="p-[0_!important]">
             <iframe
                 class="w-full h-full rounded-sm"
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d243.86194647889337!2d-77.08077584293679!3d-12.057886485436867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDAzJzI4LjQiUyA3N8KwMDQnNTAuNyJX!5e0!3m2!1ses!2spe!4v1752679219284!5m2!1ses!2spe"
@@ -111,13 +60,13 @@ import { Facebook, Mail, MapPin } from "lucide-react";
         gap: clamp(0.5rem, 2dvh, 1.5rem);
         padding: 1rem;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(16dvh, auto);
+        grid-auto-rows: minmax(calc(20dvh - 1dvh - 3rem), auto);
         grid-template-areas:
-            "back                   presentation    functions   organization"
-            "activities             ocaa            ocaa        ocaa"
-            "activities             ocaa            ocaa        ocaa"
-            "transparency           ocaa            ocaa        ocaa"
-            "transparency           contact-us  contact-us      map";
+            "back           ocaa            ocaa        ocaa"
+            "presentation   ocaa            ocaa        ocaa"
+            "functions      ocaa            ocaa        ocaa"
+            "boss           organization    activities  transparency"
+            "boss           contact-us      contact-us  map";
     }
 
     /* asignación de áreas */
@@ -149,19 +98,25 @@ import { Facebook, Mail, MapPin } from "lucide-react";
         grid-area: contact-us;
     }
 
-    .title {
-        grid-area: title;
+    .ocaa {
+        grid-area: ocaa;
+    }
+    .boss {
+        grid-area: boss;
+    }
+    .map {
+        grid-area: map;
     }
 
     /* lg */
     @media (max-width: 64rem) {
         .ocaa-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: auto auto auto;
             grid-template-areas:
-                "back                   ocaa                ocaa"
-                "activities             activities          presentation"
-                "functions              organization        transparency"
-                "contact-us             contact-us          map";
+                "back           ocaa            ocaa"
+                "presentation   functions       organization "
+                "boss           activities      transparency"
+                "boss           contact-us      map";
         }
     }
 
@@ -170,11 +125,12 @@ import { Facebook, Mail, MapPin } from "lucide-react";
         .ocaa-grid {
             grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
-                "back                   ocaa"
-                "presentation           activities"
-                "functions              organization"
-                "transparency            contact-us"
-                "map            contact-us";
+                "back            ocaa"
+                "presentation    activities"
+                "functions       organization"
+                "transparency    contact-us"
+                "boss            contact-us "
+                "boss            map";
         }
     }
 
@@ -190,7 +146,9 @@ import { Facebook, Mail, MapPin } from "lucide-react";
                 "functions"
                 "organization"
                 "transparency"
-                "contact-us";
+                "boss"
+                "contact-us"
+                "map";
         }
     }
 </style>

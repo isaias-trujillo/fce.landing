@@ -14,12 +14,19 @@ const props = Astro.props;
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href={props.iconPath} />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href={props.iconPath ?? "/favicon.svg"}
+        />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{props.title}</title>
     </head>
-    <body class={`min-h-dvh w-dvw ${props.class}`} style={props.style ?? ""}>
+    <body
+        class={`min-h-dvh w-dvw max-w-dvw ${props.class}`}
+        style={props.style ?? ""}
+    >
         <slot />
     </body>
 </html>

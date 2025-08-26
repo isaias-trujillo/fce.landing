@@ -1,0 +1,53 @@
+---
+import { Mail, Facebook, MapPin } from "lucide-react";
+import Block from "@/components/ocaa/hero/block.astro";
+---
+
+<Block id="contact-us" class="flex-col items-start text-left">
+    <h1 class="text-[clamp(1rem,1.5dvw,1.5rem)]">Contáctanos</h1>
+    <ul
+        class="w-full flex flex-rows flex-wrap gap-x-8 gap-y-4 justify-between items-start"
+    >
+        <li>
+            <a
+                class="place-content-center place-items-center flex gap-4"
+                href="mailto:ocaa.economia@unmsm.edu.pe"
+                target="_blank"
+            >
+                <Mail
+                    className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
+                />
+                <span class="text-[clamp(0.8rem,1.75svw,1rem)]"
+                    >ocaa.economia@unmsm.edu.pe</span
+                >
+            </a>
+        </li>
+        <li>
+            <a
+                class="place-content-center place-items-center flex gap-4"
+                href="https://www.facebook.com/economiasm1875/"
+                target="_blank"
+            >
+                <Facebook
+                    className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
+                />
+                <span class="text-[clamp(0.8rem,1.75svw,1rem)]">OCAA ~ FCE</span
+                >
+            </a>
+        </li>
+        <li>
+            <a
+                class="place-content-center place-items-center flex gap-4"
+                href="https://www.google.com/maps?ll=-12.057886,-77.080776&z=19&t=m&hl=es&gl=PE&mapclient=embed&q=12%C2%B003%2728.4%22S+77%C2%B004%2750.7%22W+-12.057889,+-77.080750@-12.0578889,-77.08075"
+                target="_blank"
+            >
+                <MapPin
+                    className="size-[clamp(1rem,2dvw,1.5rem)] min-w-fit min-h-fit"
+                />
+                <span class="text-[clamp(0.8rem,1.75svw,1rem)]"
+                    >Calle Germán Amézaga N° 375 Ciudad Universitaria, Lima 1.</span
+                >
+            </a>
+        </li>
+    </ul>
+</Block>

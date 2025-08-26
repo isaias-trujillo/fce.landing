@@ -8,7 +8,7 @@ const props = Astro.props;
 ---
 
 <section
-    class={`${props.id} flex flex-wrap gap-x-[2dvh] gap-y-[1dvh] p-[clamp(1rem,4dvw,2rem)] text-center text-wrap break-words items-center justify-center border-2 rounded-md ${props.class} `}
+    class={`${props.id} hover:bg-accent transition-colors flex flex-wrap gap-x-[2dvh] gap-y-[1.25dvh] p-[clamp(0.75rem,2dvw,2rem)] text-center text-wrap break-words items-center justify-center border-accent border-2 rounded-md max-lg:flex-row max-md:flex-col ${props.class} `}
 >
     <slot />
 </section>
