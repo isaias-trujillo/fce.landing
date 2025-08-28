@@ -3,29 +3,47 @@ import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 ---
 
 <footer
-        id="contactanos"
+
+    id="contactanos"
+
     class="w-full border-t border-muted bg-background px-6 py-8 text-sm text-muted-foreground md:px-10 lg:px-16"
 >
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <!-- Contacto -->
         <div class="space-y-4">
             <h3 class="text-base font-semibold text-foreground">Contáctanos</h3>
             <ul class="space-y-2">
                 <li class="flex items-start gap-2">
-                    <MapPin className="mt-0.5 size-4" />
+                    <MapPin class="mt-0.5 size-4" />
                     <span
                         >Av. Universitaria 280, Ciudad Universitaria, Lima 1</span
                     >
                 </li>
                 <li class="flex items-center gap-2">
-                    <Phone className="size-4" />
+                    <Phone class="size-4" />
                     <span>(01) 619-7000 anexo 1234</span>
                 </li>
                 <li class="flex items-center gap-2">
-                    <Mail className="size-4" />
+                    <Mail class="size-4" />
                     <a
+
+
+
+
+
+
                         href="mailto:cesepi.economia@unmsm.edu.pe"
+
+
+
+
+
+
                         class="underline hover:text-primary"
+
+
+
+
+
                     >
                         cesepi.economia@unmsm.edu.pe
                     </a>
@@ -33,71 +51,90 @@ import { Facebook, Mail, MapPin, Phone } from "lucide-react";
             </ul>
         </div>
 
-        <!-- Enlaces rápidos -->
         <div class="space-y-4">
             <h3 class="text-base font-semibold text-foreground">
                 Enlaces rápidos
             </h3>
             <ul class="space-y-2">
                 <li>
-                    <a href="/cesepi" class="hover:text-primary">Inicio</a>
+                    <a href="/cesepi/nosotros" class="hover:text-primary">
+                        Nosotros
+                    </a>
                 </li>
                 <li>
-                    <a href="/cesepi/servicios" class="hover:text-primary"
-                        >Servicios</a
-                    >
+                    <a href="/cesepi/servicios" class="hover:text-primary">
+                        Servicios
+                    </a>
                 </li>
                 <li>
-                    <a href="/cesepi#equipo" class="hover:text-primary"
-                        >Equipo</a
-                    >
+                    <a href="/cesepi/portafolio" class="hover:text-primary">
+                        Portafolio
+                    </a>
                 </li>
                 <li>
-                    <a href="/cesepi#portafolio" class="hover:text-primary"
-                        >Portafolio</a
-                    >
+                    <a href="/cesepi/transparencia" class="hover:text-primary">
+                        Transparencia
+                    </a>
                 </li>
                 <li>
-                    <a href="/public" class="hover:text-primary">Contáctanos</a>
+                    <a href="/cesepi#contactanos" class="hover:text-primary">
+                        Contáctanos
+                    </a>
                 </li>
             </ul>
         </div>
 
-        <!-- Redes sociales -->
         <div class="space-y-4">
             <h3 class="text-base font-semibold text-foreground">Síguenos</h3>
             <ul class="flex flex-col space-y-2">
                 <li class="flex items-center gap-2">
-                    <Facebook className="size-4" />
+                    <Facebook class="size-4" />
                     <a
+
+
+
+
+
+
                         href="https://www.facebook.com/cesepi.unmsm/"
+
+
+
+
+
+
                         target="_blank"
+
+
+
+
+
+
                         rel="noopener noreferrer"
+
+
+
+
+
+
                         class="hover:text-primary"
+
+
+
+
+
                     >
                         Facebook Oficial
                     </a>
                 </li>
-                <!-- <li class="flex items-center gap-2">
-                    <Youtube className="size-4" />
-                    <a
-                        href="https://www.youtube.com/@economiaunmsm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-primary"
-                    >
-                        Canal YouTube
-                    </a>
-                </li> -->
             </ul>
         </div>
     </div>
 
-    <!-- Legal -->
     <div
         class="mt-10 border-t border-muted pt-4 text-center text-xs text-muted-foreground"
     >
         &copy; 2025 Centro de Servicios Económicos para la Investigación -
-        CESEPI. UNMSM.
+        CESEPI.     UNMSM.
     </div>
 </footer>

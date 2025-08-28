@@ -1,0 +1,120 @@
+---
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/cesepi/nav-bar-menu";
+import AnimatedText from "@/components/shared/animated-text";
+import Gallery from "@/components/cesepi/team/gallery";
+import GalleryItem from "@/components/cesepi/team/gallery.item";
+
+import Footer from "@/components/cesepi/footer.astro";
+const items: {
+    imgSrc: string;
+    fullName: string;
+    title: string;
+}[] = [
+    {
+        imgSrc: "/cdn/cesepi/organization/castillo.jpg",
+        fullName: "Dr. Rafael Alan Castillo Sáenz",
+        title: "Director Gerente",
+    },
+    {
+        imgSrc: "/cdn/cesepi/organization/escudero.jpg",
+        fullName: "Mg. Benjamín Alberto Escudero Cavero",
+        title: "Director Administrativo",
+    },
+    {
+        imgSrc: "/cdn/cesepi/organization/lezama.jpg",
+        fullName: "Dr. Néstor Hugo Lezama Coca",
+        title: "Presidente",
+    },
+];
+---
+
+<GlobalLayout
+    title="CESEPI"
+    class="flex-grow flex flex-col items-center gap-[4dvh]"
+>
+    <NavBarMenu client:only />
+    <div
+        class="absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+    >
+        <div
+            class="absolute left-0 right-0 top-0 m-auto h-[310px] w-[310px] rounded-full bg-blue-400 opacity-20 blur-[100px]"
+        >
+        </div>
+    </div>
+
+    <AnimatedText client:only>
+        <header
+            class="relative flex max-w-2xl flex-col items-center mt-[10dvh] gap-8"
+        >
+            <h1
+                class="text-center text-3xl font-medium dark:text-gray-50 sm:text-6xl"
+            >
+                Personas que inspiran, proyectos que <strong
+                    class="text-blue-700">transforman</strong
+                >
+            </h1>
+            <h2 class="text-center text-lg leading-6">
+                Somos un espacio donde convergen trayectoria universitaria y
+                consultoría especializada para crear soluciones.
+            </h2>
+        </header>
+    </AnimatedText>
+    <Gallery client:only>
+        {
+            items.map((c) => (
+                <GalleryItem
+                    client:only
+                    fullName={c.fullName}
+                    imgSrc={c.imgSrc}
+                    title={c.title}
+                    className="text-blue-700"
+                />
+            ))
+        }
+    </Gallery>
+    <section
+        class="flex flex-col flex-wrap max-w-3xl text-balance px-[clamp(1rem,2.5dvw,3.5rem)]"
+    >
+        <h2 class="text-lg font-semibold text-gray-800">Fundación</h2>
+        <p class="text-base text-gray-700 leading-relaxed">
+            El <span class="font-semibold text-gray-900"
+                >Centro de Servicios y Elaboración de Proyectos de Inversión
+                (CESEPI)</span
+            >
+            de la Facultad de Ciencias Económicas de la Universidad Nacional Mayor
+            de San Marcos, fue creado el <span
+                class="font-semibold text-gray-900">19 de enero de 1995</span
+            >, mediante Resolución Rectoral Nº0190-R-95, y goza de autonomía
+            técnica, económica y administrativa.
+        </p>
+    </section>
+    <section
+        class="flex flex-col flex-wrap max-w-3xl text-balance px-[clamp(1rem,2.5dvw,3.5rem)]"
+    >
+        <h2 class="text-lg font-semibold text-gray-800">Trayectoria</h2>
+        <p class="text-base text-gray-700 leading-relaxed">
+            En sus <span class="font-semibold text-gray-900"
+                >30 años de existencia</span
+            >, y gracias al esfuerzo de sus miembros, el CESEPI ha desarrollado
+            proyectos de gran envergadura, contribuyendo al fortalecimiento de
+            la Facultad de Ciencias Económicas y al desarrollo de la Comunidad
+            Sanmarquina, con la participación de profesores, alumnos, egresados
+            y personal administrativo.
+        </p>
+    </section>
+    <section
+        class="flex flex-col flex-wrap max-w-3xl text-balance px-[clamp(1rem,2.5dvw,3.5rem)]"
+    >
+        <h2 class="text-lg font-semibold text-gray-800">Fortalecimiento</h2>
+        <p class="text-base text-gray-700 leading-relaxed">
+            Con el paso de los años, el CESEPI se ha consolidado con equipos
+            directivos y técnicos con amplia experiencia en los campos <span
+                class="font-semibold text-gray-900"
+                >económico, financiero, educativo y de la salud</span
+            >, orientando su trabajo al desarrollo de capacitaciones,
+            consultorías y proyectos para entidades públicas y privadas.
+        </p>
+    </section>
+    <Footer />
+</GlobalLayout>
