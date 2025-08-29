@@ -1,7 +1,7 @@
 const pictures = [
   {
     // url: "https://images.pexels.com/photos/15317176/pexels-photo-15317176.jpeg",
-    url: "/cdn/cesepi/hero/masonry/472753332_122134745090560335_2458282020611556308_n.jpg",
+    url: "/cdn/cesepi/hero/masonry/56931941_1941869549275636_4995868686981005312_n.jpg",
     alt: "01",
   },
   {
