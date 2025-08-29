@@ -61,7 +61,7 @@ const Hero = () => {
 
           <div className="flex justify-between gap-4">
             <a
-              href="#get-started"
+              href="/cesepi/servicios"
               className="inline-flex items-center gap-2 px-5 py-2 text-white bg-black rounded-full text-sm font-medium hover:opacity-90 transition"
             >
               Conocer más<span aria-hidden>↗</span>
