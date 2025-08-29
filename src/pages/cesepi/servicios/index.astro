@@ -1,0 +1,236 @@
+---
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+import NavBarMenu from "@/components/cesepi/nav-bar-menu";
+import AnimatedText from "@/components/shared/animated-text";
+---
+
+<GlobalLayout title="CESEPI" class="content-start items-start">
+    <NavBarMenu client:only />
+
+    <div
+        class="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+    >
+    </div>
+    <main class="flex flex-col flex-wrap h-100dvh justify-center">
+        <article id="gallery">
+            <AnimatedText client:only>
+                <header
+                    class="relative flex max-w-2xl flex-col items-center mt-[10dvh] gap-8 text-center m-auto"
+                >
+                    <h1
+                        class="text-center text-3xl font-medium dark:text-gray-50 sm:text-6xl"
+                    >
+                        Soluciones que transforman ideas en <strong
+                            class="bg-[#ffa412]">resultados</strong
+                        >
+                    </h1>
+                </header>
+            </AnimatedText>
+            <section class="img-group-container">
+                <div>
+                    <ul class="img-group">
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/explaining-project-points_1098-15436.jpg"
+                                alt="Asesoría y Consultoría"
+                            />
+                            <h3>Asesoría y Consultoría</h3>
+                            <p>
+                                En los campos económico, social y financiero
+                                para gobiernos, servicios de salud, empresas y
+                                cooperativas.
+                            </p>
+                        </li>
+
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/halftone-monochrome-collage_23-2151004998.jpg"
+                                alt="Liquidación de Entidades"
+                            />
+                            <h3>Liquidación de Entidades</h3>
+                            <p>
+                                Gestión integral de procesos de liquidación en
+                                el sistema financiero y empresarial.
+                            </p>
+                        </li>
+
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/business-people-shaking-hands-finishing-up-meeting_1150-37745.jpg"
+                                alt="Estudios y Proyectos de Inversión"
+                            />
+                            <h3>Estudios y Proyectos</h3>
+                            <p>
+                                Elaboración de estudios técnico-económicos y
+                                desarrollo de proyectos en salud, agricultura,
+                                minería y más.
+                            </p>
+                        </li>
+
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/business-team-discussing-their-ideas-while-working-office_171337-5952.jpg"
+                                alt="Capacitación y Especialización"
+                            />
+                            <h3>Capacitación y Especialización</h3>
+                            <p>
+                                Programas en áreas de gestión para instituciones
+                                públicas y privadas.
+                            </p>
+                        </li>
+
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/young-couple-using-digital-tablet-with-their-insurance-agent-consultations-office_637285-857.jpg"
+                                alt="Soporte en Gestión Empresarial"
+                            />
+                            <h3>Soporte en Gestión</h3>
+                            <p>
+                                Organización y elaboración de instrumentos de
+                                gestión para empresas públicas y privadas.
+                            </p>
+                        </li>
+
+                        <li class="img-container">
+                            <img
+                                src="/cdn/cesepi/servicios/close-up-smiling-person-conference-room_23-2149085987.jpg"
+                                alt="Apoyo Logístico y RRHH"
+                            />
+                            <h3>Apoyo Logístico y RRHH</h3>
+                            <p>
+                                Asistencia en organización y captación de
+                                talento humano para entidades públicas y
+                                privadas.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <footer class="flex flex-col flex-wrap gap-2 break-words p-4">
+                <p class="text-[clamp(1.5rem,3dvw,4.25rem)] font-black">
+                    ¿Estás listo para iniciar tu proyecto?
+                </p>
+                <a
+                    class="font-bold text-[clamp(1rem,2dvw,1.25rem)] bg-[#ffa412] px-4 py-2"
+                    target="_blank"
+                    href="mailto:cesepi.economia@unmsm.edu.pe"
+                    >cesepi.economia@unmsm.edu.pe</a
+                >
+            </footer>
+        </article>
+        <div class="progress"></div>
+    </main>
+</GlobalLayout>
+<script type="module">
+    import {
+        animate,
+        scroll,
+    } from "https://cdn.jsdelivr.net/npm/motion@12.23.11/+esm";
+
+    const items = document.querySelectorAll(".img-container");
+
+    // Animate gallery horizontally during vertical scroll
+    scroll(
+        animate(".img-group", {
+            transform: ["none", `translateX(-${items.length - 1}00vw)`],
+        }),
+        { target: document.querySelector(".img-group-container") },
+    );
+
+    // Progress bar representing gallery scroll
+    scroll(animate(".progress", { scaleX: [0, 1] }), {
+        target: document.querySelector(".img-group-container"),
+    });
+</script>
+
+<style>
+    #gallery {
+        width: 98vw;
+    }
+
+    #gallery h3 {
+        font-family:
+            "" Azeret Mono "",
+            monospace;
+    }
+
+    #gallery header,
+    #gallery footer {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-group-container {
+        height: 500vh;
+        position: relative;
+    }
+
+    .img-group-container > div {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .img-group {
+        display: flex;
+    }
+
+    .img-container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #gallery header h2 {
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0;
+    }
+
+    .img-container h3 {
+        margin: 0;
+        font-size: clamp(1.25rem, 3dvw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        position: relative;
+        bottom: 30px;
+        display: inline-block;
+
+        background-color: #ffa412;
+        color: black;
+        padding: 0.5rem 1rem;
+
+        max-width: fit-content;
+    }
+
+    .img-container p {
+        text-wrap: balance;
+        font-size: clamp(0.75rem, 3dvw, 1rem);
+        padding-right: 1rem;
+    }
+
+    .img-container img {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .progress {
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: #9911ff;
+        bottom: 50px;
+        transform: scaleX(0);
+    }
+</style>

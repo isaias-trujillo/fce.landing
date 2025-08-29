@@ -5,6 +5,7 @@ import {
   Sparkles,
   Users,
   Menu,
+  MessageCircle,
 } from "lucide-react";
 
 import {
@@ -119,7 +120,13 @@ const NavBarMenu = () => {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <a href="/cesepi#contactanos">Contáctanos</a>
+                  <a
+                    href="/cesepi#contactanos"
+                    className="flex flex-row items-center gap-2"
+                  >
+                    <MessageCircle className="size-4" />
+                    Contáctanos
+                  </a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -140,7 +147,7 @@ const NavBarMenu = () => {
             >
               <SheetHeader>
                 <SheetTitle className="text-[clamp(0.85rem,1vw,1.1rem)]">
-                  Menú
+                  CESEPI ~ Menú
                 </SheetTitle>
               </SheetHeader>
               <ul className="mt-6 flex flex-col gap-[clamp(0.5rem,2vw,1rem)] text-[clamp(0.75rem,0.9vw,1rem)]">
@@ -160,11 +167,11 @@ const NavBarMenu = () => {
                     <HandHelping className="size-4" /> Servicios
                   </a>
                 </li>
-                <li>
-                  {/* <a href="/cesepi/equipo" className="flex gap-2 items-center">
+                {/* <li>
+                  <a href="/cesepi/equipo" className="flex gap-2 items-center">
                     <Users className="size-4" /> Equipo
-                  </a> */}
-                </li>
+                  </a>
+                </li> */}
                 <li>
                   <a
                     href="/cesepi/portafolio"
@@ -186,6 +193,7 @@ const NavBarMenu = () => {
                     href="/cesepi#contacto"
                     className="flex gap-2 items-center"
                   >
+                    <MessageCircle className="size-4" />
                     Contáctanos
                   </a>
                 </li>
